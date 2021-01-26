@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root :to => 'pages#home'
+  resources :users, :only => [:new, :create]
+
+  resources :clubs, :only => [:home, :create]
+
+  get '/clubs/home' => 'clubs#home'
+
+  get '/clubs/new' => 'clubs#new'
+  post '/clubs/new' => 'clubs#new'
 end
