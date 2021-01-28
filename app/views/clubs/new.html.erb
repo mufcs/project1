@@ -1,6 +1,6 @@
-<h1>Add club details</h1>
+<h1>New club</h1>
 
-<%= form_for @club, :url => {:controller => "clubs", :action => "new"} do |f| %>
+<%= form_for @club do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, :required => true, :autofocus => true, :class => 'form-control' %>
@@ -26,5 +26,5 @@
     <%= f.text_field :image, :class => 'form-control' %>
   </div>
 
-  <%= f.submit "Save", :class => 'btn btn-success btn-lg' %>
+  <%= f.submit "Create club", :class => 'btn btn-success btn-lg' %>
 <% end %>

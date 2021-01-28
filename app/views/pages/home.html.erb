@@ -1,2 +1,9 @@
-<h1>Login Page</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Home</h1>
+
+<% if @current_user.present? %>
+  <p>
+    Welcome <%= @current_user.user_type %>
+    <%= @current_user.name %>
+  </p>
+  <% end %>
+  

@@ -1,19 +1,26 @@
 class ClubsController < ApplicationController
-
-  def home
+  before_action :check_for_login
+  
+  def index
+    @clubs = Club.all
   end
 
   # /clubs/create
   def new
     @club = Club.new
-    if request.post?
-      club = Club.create user_params
-      redirect_to "/clubs/home"
-    end
+  end
+  def create
+   club = Club.create club_params # create      # associate
+   redirect_to club
   end
 
+  def show
+   @club = Club.find params[:id]
+  end
+
+
   private
-  def user_params
-  params.require(:club).permit(:title, :country, :city, :founded)
+  def club_params
+  params.require(:club).permit(:title, :country, :city, :founded, :image)
   end
 end

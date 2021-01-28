@@ -7,7 +7,7 @@ class CreateClubs < ActiveRecord::Migration[5.2]
       t.date :founded
       t.text :image
       t.integer :user_id
-      
+
       t.timestamps
     end
   end

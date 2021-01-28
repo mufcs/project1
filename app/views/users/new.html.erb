@@ -1,5 +1,13 @@
 <h1>Sign Up</h1>
 
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
 <%= form_for @user do |f| %>
   <div class="form-group">
     <%= f.label :email %>
@@ -22,4 +30,5 @@
   </div>
 
   <%= f.submit "Sign up", :class => 'btn btn-success btn-lg' %>
+    
 <% end %>
