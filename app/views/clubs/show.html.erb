@@ -7,3 +7,9 @@
   <li>City: <%= @club.city %></li>
   <li>Founded: <%= @club.founded.strftime '%A, %B %e, %Y' unless @club.founded.nil? %></li>
 </ul>
+
+
+<div class="controls">
+  <%= link_to 'Edit club', edit_club_path(@club) %>
+  <%= link_to 'Delete club', @club, :method => 'delete' %>
+</div>
