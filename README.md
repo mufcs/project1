@@ -1,24 +1,38 @@
-# README
+# Project1 [Build your own football team]()
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ruby version
+  2.7.2p137
 
-Things you may want to cover:
+# Database creation
+  There are 4 different databases and have dependencies within them
+    * users
+    * clubs
+    * players
+    * reviews
 
-* Ruby version
+## High level functional requirement
 
-* System dependencies
+* As a user
+ I want to create a football team
+ so that I can play with other team/s.
 
-* Configuration
+ * As a player
+  I want to be in a club
+  so that I can play in the tournament.
 
-* Database creation
+* As a club
+  I want to have both user and player
+  so that the club can compete with other clubs.
 
-* Database initialization
+* As a software
+  I want to keep track of win, loss and draw within clubs
+  so that the winner can be declared.
 
-* How to run the test suite
+* As a system
+  I want to keep track of individual player's performance
+  so that club with high performing players win.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+# System dependencies
+    * Bootstrap
+    * Postgres

@@ -2,12 +2,19 @@
 
 <%= image_tag @club.image, :class => 'feature', :alt => @club.title if @club.image.present? %>
 <ul>
-  <li>Title: <%=  @club.title %></li>
-  <li>Country: <%= @club.country %></li>
-  <li>City: <%= @club.city %></li>
-  <li>Founded: <%= @club.founded.strftime '%A, %B %e, %Y' unless @club.founded.nil? %></li>
+  <li>Title:
+    <%= @club.title %></li>
+  <li>Country:
+    <%= @club.country %></li>
+  <li>City:
+    <%= @club.city %></li>
+  <li>Founded:
+    <%= @club.founded.strftime '%A, %B %e, %Y' unless @club.founded.nil? %></li>
 </ul>
 
+<% @club.players.each do |player| %>
+  <%= link_to image_tag(player.image, :class => 'thumb'), player %>
+<% end %>
 
 <div class="controls">
   <%= link_to 'Edit club', edit_club_path(@club) %>
